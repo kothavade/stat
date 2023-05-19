@@ -25,7 +25,7 @@ def main():
 
         if detail:
             str.write("#### Mean ± t-value * Standard Deviation / sqrt(n)")
-            str.write(f"{t.m:.4f} ± {t.tval:.4f} * {t.std_err:.4f} / sqrt({t.n})")
+            str.write(f"{t.m:.4f} ± {t.tval:.4f} * {t.std_dev:.4f} / sqrt({t.n})")
 
             str.write("#### Mean ± t-value * Standard Error")
             str.write(f"{t.m:.4f} ± {t.tval:.4f} * {t.std_err:.4f}")
@@ -46,9 +46,6 @@ def main():
         z = ProportionConfidenceInterval(prop, n, confidence)
 
         if detail:
-            str.write("#### Proportion ± z-value * Standard Deviation / sqrt(n)")
-            str.write(f"{z.proportion:.4f} ± {z.zval:.4f} * {z.std_err:.4f} / sqrt({z.n})")
-
             str.write("#### Proportion ± z-value * Standard Error")
             str.write(f"{z.proportion:.4f} ± {z.zval:.4f} * {z.std_err:.4f}")
 

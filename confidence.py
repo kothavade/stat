@@ -33,6 +33,7 @@ class MeanConfidenceInterval(BaseConfidenceInterval):
         self.n = len(data)
         self.m = np.mean(data)
         self.std_err = st.sem(data)
+        self.std_dev = np.sqrt(np.sum((data - self.m) ** 2) / (self.n - 1))
         self.tval = st.t.ppf((1 + confidence) / 2, self.n - 1)
         self.moe = self.std_err * self.tval
         self.df = self.n - 1
